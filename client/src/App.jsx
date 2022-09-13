@@ -1,34 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.scss';
+import { Link } from "react-router-dom";
+import logo from "./assets/logoPng.png";
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [emailval,setemailval]=useState("");
+  const [passval,setpassval]=useState("");
+
+  const handleSubmit=(event)=>{
+    event.preventDefault();
+  }
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="main-login">
+        <div className="login-contain">
+            <div className="left-side">
+              <div className="img-class">
+                <img src={logo} id="img-id" alt="" />
+              </div>
+              <form onSubmit={handleSubmit}>
+                <label for="emil1">Adresse e-mail</label>
+                  <input placeholder="Votre adresse e-mail..." type="email" id="emil1" value={emailval} onChange={(e)=>{setemailval(e.target.value)}}/>
+                <label for="pwd1">Mot de passe</label>
+                  <input placeholder="Votre mot de passe..." type="password" id="pwd1" value={passval} onChange={(e)=>{setpassval(e.target.value)}}/>
+                  <button type="submit" id="sub_butt">Connexion</button>
+              </form>
+            </div>
+
+            <div className="right-side">
+              <div className="welcomeNote">
+                <h3>INTRANET</h3>
+              </div>
+              <div className="welcomeImg">
+
+              </div>
+            </div>
+
+        </div>
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+  );
 }
 
-export default App
+export default App;
