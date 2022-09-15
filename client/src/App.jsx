@@ -1,10 +1,40 @@
-import { useState } from "react";
-import "./App.scss";
+import { React, useState } from "react";
+import Login from "./views/login/login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
-import logo from "./assets/logoPng.png";
+import Welcome from "./views/welcome/welcome";
+import List from "./views/list/list";
+
+function setToken(userToken) {
+  localStorage.setItem("token", JSON.stringify(userToken));
+}
+
+function getToken() {
+  const token = localStorage.getItem("token");
+  return token;
+}
 
 function App() {
-  const [emailval, setemailval] = useState("");
+  const token = getToken();
+
+  if (!token) {
+    return <Login setToken={setToken} />;
+  }
+
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="welcome" element={<Welcome />} />
+          <Route path="list" element={<List />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+
+  {
+    /*const [emailval, setemailval] = useState("");
   const [passval, setpassval] = useState("");
 
   const handleSubmit = (event) => {
@@ -66,6 +96,8 @@ function App() {
       </div>
     </div>
   );
+}*/
+  }
 }
 
 export default App;

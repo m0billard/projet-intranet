@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+$main-color: #f09d51;
+
+.main-list {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #e0dfd5;
+  .list-contain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    .list-h1 {
+      font-size: 4em;
+      margin-bottom: 1.5rem;
+      color: #313638;
+    }
+    hr {
+      width: 95%;
+      height: 2px;
+      border: none;
+      background-color: #313638;
+      opacity: 10%;
+      margin-bottom: 1.5rem;
+    }
+    .filtre {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 0px;
+      column-gap: 1em;
+      justify-content: center;
+      width: 70%;
+      align-items: center;
+      .list-input {
+        display: block;
+        border: none;
+        width: 30%;
+        padding: 0.2rem 1rem;
+        color: #313638;
+        transition: all 0.1s ease-in-out;
+        height: 2rem;
+        &:focus {
+          outline: none;
+          border: none;
+        }
+        &:hover {
+          outline: 0.5px solid $main-color;
+          box-shadow: 2px 2px 9px -2px $main-color;
+        }
+      }
+      .list-select-one {
+        display: block;
+        border: none;
+        width: 15%;
+        height: 2.4rem;
+      }
+      .list-select-two {
+        display: block;
+        border: none;
+        width: 15%;
+        height: 2.4rem;
+      }
+    }
+    .list-cards {
+      margin-top:3rem;
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 0px;
+      column-gap: 1em;
+      justify-content: center;
+      width: 90%;
+      align-items: center;
+    }
+  }
+}

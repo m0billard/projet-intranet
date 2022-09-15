@@ -1,6 +1,11 @@
 import { useState } from "react";
 import "./navbar.scss";
 
+function deconnectUser(){
+  localStorage.clear();
+  window.location = "/";
+}
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -13,7 +18,7 @@ function Navbar() {
       <div className={`nav-items ${isOpen && "open"}`}>
         <a href="/home">Liste</a>
         <a href="/about">Mon profil</a>
-        <a href="/service">Déconnexion</a>
+        <button onClick={deconnectUser}>Déconnexion</button>
       </div>
       <div
         className={`nav-toggle ${isOpen && "open"}`}
