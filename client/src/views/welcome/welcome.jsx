@@ -1,9 +1,25 @@
 import "./welcome.scss";
 import Navbar from "../../components/navbar";
 import Card from "../../components/card";
-import logo from "../../assets/logoPng.png";
+import { useEffect, useState } from "react";
+import APIService from "../../services/APIService";
+
 
 function Welcome() {
+
+  const [randomCollaborator, setRandomCollaborator] = useState(null);
+
+  const getRandom = async () => {
+    const data = await APIService.getRandomCollaborator();
+    
+    setRandomCollaborator(data);
+  };
+
+  useEffect(() => {
+    getRandom();
+  }, []);
+
+
   return (
     <div>
       <Navbar />
@@ -15,7 +31,7 @@ function Welcome() {
             collaborateurs.
           </p>
           <h2 className="welcome-h2">Avez-vous dit bonjour à :</h2>
-          <Card/>
+          {randomCollaborator && <Card collaborator={randomCollaborator}/>}
           <button id="welcome-button">Dire bonjour à quelqu'un d'autre</button>
         </div>
       </div>

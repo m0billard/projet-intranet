@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./navbar.scss";
+import { FiPower } from 'react-icons/fi';
 
 function deconnectUser(){
   localStorage.clear();
@@ -16,9 +17,9 @@ function Navbar() {
         </h1>
       </div>
       <div className={`nav-items ${isOpen && "open"}`}>
-        <a href="/home">Liste</a>
+        <a href="/list">Liste</a>
         <a href="/about">Mon profil</a>
-        <button onClick={deconnectUser}>Déconnexion</button>
+        <button onClick={deconnectUser} className="navbar-button"><FiPower/></button>
       </div>
       <div
         className={`nav-toggle ${isOpen && "open"}`}

@@ -4,14 +4,14 @@ import logo from "../assets/logoPng.png";
 import { AiFillMail, AiFillPhone } from "react-icons/ai";
 import { FaBirthdayCake } from "react-icons/fa";
 
-function Card() {
+function Card({collaborator}) {
   return (
     <div id="card-container">
               <div className="card">
                 <img src={logo} id="welcome-img" alt="" />
                 <div className="card-details">
                   <span className="tag">Technique</span>
-                  <div className="name">Quentin Roger (36 ans)</div>
+                  <div className="name">{collaborator.firstname} (36 ans)</div>
                   <p className="welcome-p">Saint-pierre, France</p>
                   <p className="welcome-p">
                     <AiFillMail />

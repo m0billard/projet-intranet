@@ -1,9 +1,24 @@
 import "./list.scss";
+import { useState, useEffect } from "react";
 import Navbar from "../../components/navbar";
 import Card from "../../components/card";
+import APIService from "../../services/APIService";
 
 
 function List() {
+
+  const [collaborators, setCollaborators] = useState([]);
+
+  const getAllCollaborator = async () => {
+    const data = await APIService.getAllCollaborators();
+    
+    setCollaborators(data);
+  };
+
+  useEffect(() => {
+    getAllCollaborator();
+  }, []);
+
   return (
     <div>
       <Navbar />
@@ -29,9 +44,7 @@ function List() {
             </select>
           </div>
           <div className="list-cards">
-            <Card />
-            <Card />
-            <Card />
+            {collaborators.map(collaborator => <Card collaborator={collaborator} key={collaborator.id}/>)}
           </div>
         </div>
       </div>

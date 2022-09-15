@@ -84,6 +84,14 @@ $main-color: #f09d51;
       transition: all 0.45s;
     }
   }
+  .navbar-button{
+    color:#e0dfd5;
+    border:none;
+    background-color: transparent;
+    font-size:30px;
+    margin-right:15px;
+    cursor:pointer;
+  }
 }
 
 .Navbar > .nav-items > a:hover::before {
