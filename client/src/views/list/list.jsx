@@ -25,7 +25,11 @@ function List() {
           <h1 className="list-h1">Liste des collaborateurs</h1>
           <hr />
           <div className="filtre">
-            <input placeholder="Rechercher..." className="list-input" />
+            <input
+              type="text"
+              placeholder="Rechercher..."
+              className="list-input"
+            />
             <label>Rechercher par :</label>
             <select name="select1" className="list-select-one">
               <option value="nom">Nom</option>

@@ -19,7 +19,7 @@ function Navbar() {
       </div>
       <div className={`nav-items ${isOpen && "open"}`}>
         <a href="/list">Liste</a>
-        <a href="/about">Mon profil</a>
+        <a href="/profil">Mon profil</a>
         <button onClick={deconnectUser} className="navbar-button">
           Déconnexion
         </button>

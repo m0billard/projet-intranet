@@ -45,13 +45,15 @@ function Login() {
               type="email"
               id="emil1"
               onChange={(e) => setUserName(e.target.value)}
+              required
             />
             <label>Mot de passe</label>
             <input
-              placeholder="Votre mot de passe..."
+              placeholder="•••••••••••"
               type="password"
               id="pwd1"
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
             <button type="submit" id="sub-button">
               Connexion
