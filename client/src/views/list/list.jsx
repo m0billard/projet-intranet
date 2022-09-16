@@ -4,14 +4,12 @@ import Navbar from "../../components/navbar";
 import Card from "../../components/card";
 import APIService from "../../services/APIService";
 
-
 function List() {
-
   const [collaborators, setCollaborators] = useState([]);
 
   const getAllCollaborator = async () => {
     const data = await APIService.getAllCollaborators();
-    
+
     setCollaborators(data);
   };
 
@@ -44,7 +42,9 @@ function List() {
             </select>
           </div>
           <div className="list-cards">
-            {collaborators.map(collaborator => <Card collaborator={collaborator} key={collaborator.id}/>)}
+            {collaborators.map((collaborator) => (
+              <Card collaborator={collaborator} key={collaborator.id} />
+            ))}
           </div>
         </div>
       </div>

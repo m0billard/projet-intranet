@@ -9,7 +9,7 @@
 $main-color: #f09d51;
 
 #card-container {
-  max-width: 300px;
+  width: 300px;
   margin: 0 auto;
   margin-bottom: 1.5rem;
   .card {
@@ -48,6 +48,9 @@ $main-color: #f09d51;
         font-size: 14px;
         color: #313638;
         margin-bottom: 0.5rem;
+        .icon-card{
+          margin-right:10px;
+        }
       }
     }
   }

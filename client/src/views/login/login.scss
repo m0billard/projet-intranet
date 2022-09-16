@@ -154,4 +154,26 @@ $main-color: #f09d51;
 }
 
 @media (max-width: 390px) {
+  .main-login {
+    .login-contain {
+      width: 80%;
+      .left-side,
+      .right-side {
+        width: 80%;
+      }
+      .left-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .intranet h1 {
+          font-size: 1.9em;
+        }
+        .footer {
+          h4 {
+            font-size: 0.6rem;
+          }
+        }
+      }
+    }
+  }
 }

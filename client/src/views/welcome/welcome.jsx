@@ -4,21 +4,18 @@ import Card from "../../components/card";
 import { useEffect, useState } from "react";
 import APIService from "../../services/APIService";
 
-
 function Welcome() {
-
   const [randomCollaborator, setRandomCollaborator] = useState(null);
 
   const getRandom = async () => {
     const data = await APIService.getRandomCollaborator();
-    
+
     setRandomCollaborator(data);
   };
 
   useEffect(() => {
     getRandom();
   }, []);
-
 
   return (
     <div>
@@ -31,8 +28,10 @@ function Welcome() {
             collaborateurs.
           </p>
           <h2 className="welcome-h2">Avez-vous dit bonjour à :</h2>
-          {randomCollaborator && <Card collaborator={randomCollaborator}/>}
-          <button id="welcome-button">Dire bonjour à quelqu'un d'autre</button>
+          {randomCollaborator && <Card collaborator={randomCollaborator} />}
+          <button id="welcome-button" onClick={getRandom}>
+            Dire bonjour à quelqu'un d'autre
+          </button>
         </div>
       </div>
     </div>
