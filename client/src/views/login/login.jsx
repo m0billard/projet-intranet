@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./login.scss";
-import logo from "../../assets/logoPng.png";
+import logo from "../../assets/loginPng.png";
 
 async function LoginUser(connexion) {
   let response = await fetch("http://localhost:7000/api/login", {
@@ -68,9 +68,6 @@ function Login() {
         </div>
 
         <div className="right-side">
-          <div className="welcomeNote">
-            <h3>Bienvenue sur l'Intranet,</h3>
-          </div>
           <div className="welcomeImg">
             <img src={logo} id="wel-img-id" alt="" />
           </div>

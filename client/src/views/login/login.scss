@@ -135,8 +135,10 @@ $main-color: #f09d51;
         }
       }
       .welcomeImg {
+        display: flex;
+        align-items: center;
         height: 100%;
-        width: 70%;
+        width: 100%;
         margin: 0rem auto;
         #wel-img-id {
           width: 100%;
