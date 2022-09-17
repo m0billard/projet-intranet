@@ -1,6 +1,8 @@
 import "./card.scss";
 import { AiFillMail, AiFillPhone } from "react-icons/ai";
 import { FaBirthdayCake } from "react-icons/fa";
+import { displayServiceColor } from "../js/serviceColors";
+import { calculateAge } from "../js/calculateAge";
 
 function Card({ collaborator }) {
   return (
@@ -8,9 +10,19 @@ function Card({ collaborator }) {
       <div className="card">
         <img src={collaborator.photo} id="welcome-img" alt="" />
         <div className="card-details">
-          <span className="tag">{collaborator.service}</span>
+          <span
+            className="tag"
+            style={{
+              backgroundColor: displayServiceColor(collaborator.service),
+            }}
+          >
+            {collaborator.service}
+          </span>
           <div className="name">
-            {collaborator.firstname} {collaborator.lastname}
+            {collaborator.firstname} {collaborator.lastname}{" "}
+            <span style={{ fontSize: "1rem", fontStyle: "italic" }}>
+              ({calculateAge(collaborator.birthdate)})
+            </span>
           </div>
           <p className="welcome-p">
             {collaborator.city}, {collaborator.country}

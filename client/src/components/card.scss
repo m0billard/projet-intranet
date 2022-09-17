@@ -31,11 +31,11 @@ $main-color: #f09d51;
       padding: 16px 8px 8px 8px;
       .tag {
         padding: 4px 8px;
-        border: 1px solid $main-color;
+        border: none;
         border-radius: 50px;
         font-size: 12px;
         font-weight: 600;
-        color: $main-color;
+        color:#313638;
       }
       .name {
         font-size: 24px;
