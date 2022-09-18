@@ -34,7 +34,7 @@ function Profil() {
               </div>
               <div>
                 <label>* E-mail :</label>
-                <input className="" type="email" />
+                <input className="" type="email"/>
               </div>
               <div>
                 <label>Mot de passe :</label>

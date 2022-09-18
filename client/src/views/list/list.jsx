@@ -3,14 +3,16 @@ import { useState, useEffect } from "react";
 import Navbar from "../../components/navbar";
 import Card from "../../components/card";
 import APIService from "../../services/APIService";
+import Search from "../../components/search";
 
 function List() {
-  const [collaborators, setCollaborators] = useState([]);
+  const [allCollaborator, setAllCollaborator] = useState(null);
+  const [filterdedAllCollaborator, setFilteredAllCollaborator] = useState(null);
 
   const getAllCollaborator = async () => {
     const data = await APIService.getAllCollaborators();
-
-    setCollaborators(data);
+    setAllCollaborator(data);
+    setFilteredAllCollaborator(data);
   };
 
   useEffect(() => {
@@ -24,16 +26,13 @@ function List() {
         <div className="list-contain">
           <h1 className="list-h1">Liste des collaborateurs</h1>
           <hr />
-          <div className="filtre">
-            <input
-              type="text"
-              placeholder="Rechercher..."
-              className="list-input"
-            />
-          </div>
+          <Search
+            allCollaborator={allCollaborator}
+            setFilteredAllCollaborator={setFilteredAllCollaborator}
+          />
           <div className="list-cards">
-            {collaborators.map((collaborator) => (
-              <Card collaborator={collaborator} key={collaborator.id} />
+            {filterdedAllCollaborator?.map((collaborator) => (
+              <Card key={collaborator.id} collaborator={collaborator} />
             ))}
           </div>
         </div>
